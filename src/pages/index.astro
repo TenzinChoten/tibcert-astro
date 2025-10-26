@@ -1,49 +1,419 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import Layout from '../layouts/Layout.astro';
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+<Layout title="SecureNet - Digital Security Initiative">
+  <!-- Navigation -->
+  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 py-4">
+      <div class="flex justify-between items-center">
+        <div class="flex items-center space-x-2">
+          <span class="text-3xl">🛡️</span>
+          <span class="text-2xl font-bold">SecureNet</span>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden text-2xl">☰</button>
+        <ul id="nav-menu" class="hidden md:flex space-x-8 text-lg">
+          <li><a href="#home" class="hover:text-blue-400 transition">Home</a></li>
+          <li><a href="#about" class="hover:text-blue-400 transition">About</a></li>
+          <li><a href="#services" class="hover:text-blue-400 transition">Services</a></li>
+          <li><a href="#resources" class="hover:text-blue-400 transition">Resources</a></li>
+          <li><a href="#team" class="hover:text-blue-400 transition">Team</a></li>
+          <li><a href="#contact" class="hover:text-blue-400 transition">Contact</a></li>
+        </ul>
+      </div>
+      <!-- Mobile Menu -->
+      <ul id="mobile-nav" class="hidden md:hidden flex-col space-y-4 mt-4 text-lg">
+        <li><a href="#home" class="block hover:text-blue-400 transition">Home</a></li>
+        <li><a href="#about" class="block hover:text-blue-400 transition">About</a></li>
+        <li><a href="#services" class="block hover:text-blue-400 transition">Services</a></li>
+        <li><a href="#resources" class="block hover:text-blue-400 transition">Resources</a></li>
+        <li><a href="#team" class="block hover:text-blue-400 transition">Team</a></li>
+        <li><a href="#contact" class="block hover:text-blue-400 transition">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="relative bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white py-32 px-4 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-10 left-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl animate-blob"></div>
+      <div class="absolute top-20 right-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"></div>
+      <div class="absolute bottom-10 left-1/2 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000"></div>
+    </div>
+    <div class="max-w-5xl mx-auto text-center relative z-10">
+      <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+        Strengthening Digital Security
+      </h1>
+      <p class="text-xl md:text-2xl mb-8 opacity-90 leading-relaxed">
+        Protecting communities through technical excellence, education, and collaborative security initiatives
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#services" class="inline-block bg-white text-purple-900 px-8 py-4 rounded-lg font-bold text-lg hover:shadow-2xl transition transform hover:-translate-y-1">
+          Explore Services
+        </a>
+        <a href="#contact" class="inline-block bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-purple-900 transition">
+          Get Support
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Alert/News Banner -->
+  <section class="bg-red-600 text-white py-4 px-4">
+    <div class="max-w-7xl mx-auto flex items-center justify-center gap-3">
+      <span class="text-2xl">⚠️</span>
+      <p class="text-center">
+        <strong>Security Alert:</strong> New phishing campaign targeting organizations. 
+        <a href="#resources" class="underline hover:text-yellow-300 ml-2">Learn More →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 px-4 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-slate-900">About SecureNet</h2>
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="bg-gradient-to-br from-purple-600 to-blue-600 rounded-2xl p-8 text-white shadow-2xl">
+            <h3 class="text-3xl font-bold mb-4">Our Mission</h3>
+            <p class="text-lg leading-relaxed">
+              To create a safer digital environment for communities worldwide by reducing and mitigating online threats through education, technical support, and collaborative security initiatives.
+            </p>
+          </div>
+        </div>
+        <div class="space-y-6 text-lg text-gray-700">
+          <p>
+            SecureNet is a coalition-based cybersecurity organization dedicated to protecting vulnerable communities from digital threats. We provide comprehensive security services including:
+          </p>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">✓</span>
+              <span><strong>24/7 Incident Response</strong> - Immediate support for security emergencies</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">✓</span>
+              <span><strong>Security Training</strong> - Comprehensive programs for all skill levels</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">✓</span>
+              <span><strong>Threat Intelligence</strong> - Real-time analysis of emerging threats</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">✓</span>
+              <span><strong>Community Support</strong> - Building resilient security networks</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-20 px-4 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 text-slate-900">Our Services</h2>
+      <p class="text-center text-xl text-gray-600 mb-16 max-w-3xl mx-auto">
+        Comprehensive security solutions tailored to protect your organization from digital threats
+      </p>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {[
+          { 
+            icon: "🚨", 
+            title: "Incident Response", 
+            desc: "24/7 emergency helpdesk with priority response for members. Immediate assistance for security breaches, malware infections, and cyber attacks.",
+            color: "from-red-500 to-red-600"
+          },
+          { 
+            icon: "🎓", 
+            title: "Security Training", 
+            desc: "Comprehensive training programs covering digital security fundamentals, safe communication practices, and threat awareness for all skill levels.",
+            color: "from-blue-500 to-blue-600"
+          },
+          { 
+            icon: "🔍", 
+            title: "Threat Analysis", 
+            desc: "Expert analysis of emerging threats, vulnerability assessments, and sector-specific security intelligence to keep you informed.",
+            color: "from-purple-500 to-purple-600"
+          },
+          { 
+            icon: "🛠️", 
+            title: "Technical Support", 
+            desc: "Expert assistance for security tool implementation, infrastructure hardening, and secure system configuration.",
+            color: "from-green-500 to-green-600"
+          },
+          { 
+            icon: "📚", 
+            title: "Knowledge Base", 
+            desc: "Extensive library of guides, tutorials, best practices, and security resources available to all community members.",
+            color: "from-yellow-500 to-orange-600"
+          },
+          { 
+            icon: "🤝", 
+            title: "Coalition Network", 
+            desc: "Join our response hubs to connect with security professionals, share intelligence, and collaborate on threat mitigation.",
+            color: "from-pink-500 to-pink-600"
+          }
+        ].map((service) => (
+          <div class="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+            <div class={`text-6xl mb-4 inline-block p-4 rounded-xl bg-gradient-to-r ${service.color} text-white`}>
+              {service.icon}
+            </div>
+            <h3 class="text-2xl font-bold mb-3 text-slate-900 group-hover:text-purple-600 transition">{service.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{service.desc}</p>
+            <a href="#contact" class="inline-block mt-4 text-purple-600 font-semibold hover:text-purple-800 transition">
+              Learn More →
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Resources Section -->
+  <section id="resources" class="py-20 px-4 bg-gradient-to-br from-slate-900 to-purple-900 text-white">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-4">Security Resources</h2>
+      <p class="text-center text-xl opacity-90 mb-16 max-w-3xl mx-auto">
+        Essential guides and tools to strengthen your digital security posture
+      </p>
+      <div class="grid md:grid-cols-3 gap-8">
+        {[
+          { title: "Security Guides", icon: "📖", items: ["Secure Communication", "Password Best Practices", "Phishing Detection", "Data Protection"] },
+          { title: "Security Tools", icon: "🔧", items: ["Encrypted Messaging", "VPN Services", "Password Managers", "2FA Solutions"] },
+          { title: "Latest Alerts", icon: "🔔", items: ["Threat Advisories", "Vulnerability Reports", "Security Updates", "Incident Reports"] }
+        ].map((resource) => (
+          <div class="bg-white/10 backdrop-blur-lg p-8 rounded-2xl border border-white/20 hover:bg-white/20 transition">
+            <div class="text-5xl mb-4">{resource.icon}</div>
+            <h3 class="text-2xl font-bold mb-4">{resource.title}</h3>
+            <ul class="space-y-3">
+              {resource.items.map((item) => (
+                <li class="flex items-center gap-2">
+                  <span class="text-green-400">→</span>
+                  <span class="opacity-90">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section id="team" class="py-20 px-4 bg-gray-50">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 text-slate-900">Our Expert Team</h2>
+      <p class="text-center text-xl text-gray-600 mb-16 max-w-3xl mx-auto">
+        Dedicated security professionals committed to protecting your digital assets
+      </p>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {[
+          { icon: "👨‍💼", name: "John Doe", role: "Executive Director", desc: "Leading coalition initiatives and strategic partnerships", color: "from-blue-500 to-blue-600" },
+          { icon: "👩‍💻", name: "Jane Smith", role: "Technical Director", desc: "Managing incident response and threat intelligence", color: "from-purple-500 to-purple-600" },
+          { icon: "👨‍🏫", name: "Mike Johnson", role: "Training Lead", desc: "Developing and delivering security education programs", color: "from-green-500 to-green-600" },
+          { icon: "👩‍🔬", name: "Sarah Williams", role: "Research Analyst", desc: "Conducting threat research and vulnerability analysis", color: "from-pink-500 to-pink-600" }
+        ].map((member) => (
+          <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition text-center group">
+            <div class={`w-32 h-32 mx-auto mb-6 bg-gradient-to-r ${member.color} rounded-full flex items-center justify-center text-6xl transform group-hover:scale-110 transition`}>
+              {member.icon}
+            </div>
+            <h3 class="text-xl font-bold mb-2 text-slate-900">{member.name}</h3>
+            <p class="text-purple-600 font-semibold mb-3">{member.role}</p>
+            <p class="text-gray-600 text-sm leading-relaxed">{member.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-20 px-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-8 text-center">
+        {[
+          { number: "10K+", label: "Community Members" },
+          { number: "500+", label: "Incidents Resolved" },
+          { number: "50+", label: "Partner Organizations" },
+          { number: "24/7", label: "Support Available" }
+        ].map((stat) => (
+          <div class="transform hover:scale-110 transition">
+            <div class="text-5xl font-bold mb-2">{stat.number}</div>
+            <div class="text-xl opacity-90">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 px-4 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 text-slate-900">Get in Touch</h2>
+      <p class="text-center text-xl text-gray-600 mb-12">
+        Need help? Our team is here to support you 24/7
+      </p>
+      <div class="grid md:grid-cols-2 gap-8 mb-12">
+        <div class="bg-gradient-to-br from-purple-600 to-blue-600 p-8 rounded-2xl text-white">
+          <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <span class="text-2xl">📧</span>
+              <div>
+                <p class="font-semibold">Email</p>
+                <p class="opacity-90">support@securenet.org</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="text-2xl">🚨</span>
+              <div>
+                <p class="font-semibold">Emergency Hotline</p>
+                <p class="opacity-90">+1 (555) 123-4567</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="text-2xl">💬</span>
+              <div>
+                <p class="font-semibold">Signal</p>
+                <p class="opacity-90">+1 (555) 987-6543</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="text-2xl">🔐</span>
+              <div>
+                <p class="font-semibold">PGP Key</p>
+                <p class="opacity-90 text-sm">Available on keyservers</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <form class="bg-gray-50 p-8 rounded-2xl space-y-6 shadow-lg">
+          <div>
+            <label class="block text-gray-700 font-bold mb-2">Name *</label>
+            <input type="text" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-purple-600 focus:outline-none transition" />
+          </div>
+          <div>
+            <label class="block text-gray-700 font-bold mb-2">Email *</label>
+            <input type="email" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-purple-600 focus:outline-none transition" />
+          </div>
+          <div>
+            <label class="block text-gray-700 font-bold mb-2">Organization</label>
+            <input type="text" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-purple-600 focus:outline-none transition" />
+          </div>
+          <div>
+            <label class="block text-gray-700 font-bold mb-2">Message *</label>
+            <textarea rows="4" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-purple-600 focus:outline-none transition"></textarea>
+          </div>
+          <button type="submit" class="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white py-4 rounded-lg font-bold text-lg hover:shadow-xl transition transform hover:-translate-y-1">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-white py-12 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <h4 class="text-xl font-bold mb-4 flex items-center gap-2">
+            <span class="text-2xl">🛡️</span> SecureNet
+          </h4>
+          <p class="opacity-75 leading-relaxed">
+            Building technical excellence through collaboration and knowledge sharing.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+          <ul class="space-y-2 opacity-75">
+            <li><a href="#about" class="hover:text-blue-400 transition">About Us</a></li>
+            <li><a href="#services" class="hover:text-blue-400 transition">Services</a></li>
+            <li><a href="#resources" class="hover:text-blue-400 transition">Resources</a></li>
+            <li><a href="#team" class="hover:text-blue-400 transition">Team</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold mb-4">Resources</h4>
+          <ul class="space-y-2 opacity-75">
+            <li><a href="#" class="hover:text-blue-400 transition">Security Guides</a></li>
+            <li><a href="#" class="hover:text-blue-400 transition">Training Portal</a></li>
+            <li><a href="#" class="hover:text-blue-400 transition">Threat Alerts</a></li>
+            <li><a href="#" class="hover:text-blue-400 transition">Knowledge Base</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold mb-4">Connect</h4>
+          <div class="flex gap-4 text-2xl">
+            <a href="#" class="hover:text-blue-400 transition">🐦</a>
+            <a href="#" class="hover:text-blue-400 transition">📘</a>
+            <a href="#" class="hover:text-blue-400 transition">💼</a>
+            <a href="#" class="hover:text-blue-400 transition">📸</a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-white/20 pt-8 text-center opacity-75">
+        <p>&copy; 2025 SecureNet Initiative. Strengthening security through collaboration.</p>
+        <p class="mt-2">Building a safer digital future for all communities worldwide.</p>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  @keyframes blob {
+    0%, 100% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+  }
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
+
+<script>
+  // Mobile menu toggle
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileNav = document.getElementById('mobile-nav');
+  
+  mobileMenuBtn?.addEventListener('click', () => {
+    mobileNav?.classList.toggle('hidden');
+    mobileNav?.classList.toggle('flex');
+  });
+
+  // Close mobile menu when clicking a link
+  document.querySelectorAll('#mobile-nav a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileNav?.classList.add('hidden');
+      mobileNav?.classList.remove('flex');
+    });
+  });
+
+  // Smooth scroll for navigation links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href')!);
+      target?.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // Add scroll effect to navigation
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 50) {
+      nav?.classList.add('shadow-2xl');
+    } else {
+      nav?.classList.remove('shadow-2xl');
+    }
+  });
+</script>
