@@ -1,3 +1,43 @@
+Project Structure:
+```
+tibcert-astro/
+├── src/                          # Source code
+│   ├── layouts/                  # Layout templates
+│   │   ├── Layout.astro         # Base layout
+│   │   └── BlogPost.astro       # Blog post layout
+│   │
+│   ├── pages/                    # File-based routing
+│   │   ├── index.astro          # Homepage (/)
+│   │   ├── about.astro          # About page (/about)
+│   │   └── blog/                # Blog posts
+│   │
+│   ├── components/               # Reusable components
+│   │   ├── Header.astro
+│   │   └── Footer.astro
+│   │
+│   ├── styles/                   # CSS files
+│   │   └── global.css           # Global styles
+│   │
+│   └── content/                  # Content collections
+│       └── blog/                # Blog posts (Markdown)
+│
+├── public/                       # Static assets (copied as-is)
+│   ├── favicon.svg
+│   └── images/
+│
+├── dist/                         # Built output (generated)
+│   ├── index.html               # Built pages
+│   └── _astro/                  # Optimized assets
+│
+├── node_modules/                 # Dependencies
+│
+├── astro.config.mjs             # Astro configuration
+├── tailwind.config.mjs          # Tailwind configuration
+├── tsconfig.json                # TypeScript config
+└── package.json                 # Project metadata
+
+
+
 # Astro Starter Kit: Blog
 
 ```sh
@@ -60,3 +100,7 @@ Check out [our documentation](https://docs.astro.build) or jump into our [Discor
 ## Credit
 
 This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+
+
+
+
